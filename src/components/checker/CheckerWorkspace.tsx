@@ -28,7 +28,7 @@ export function CheckerWorkspace() {
     setNotice(null);
     setIsChecking(true);
     try {
-      const data = await runPlagiarismCheck({ text, filename: filename ?? undefined });
+      const data = await runPlagiarismCheck(filename ? { text, filename } : { text });
       setResult(data);
     } catch (error) {
       setResult(null);
