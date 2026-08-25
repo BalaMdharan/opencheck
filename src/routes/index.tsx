@@ -6,22 +6,28 @@ import { DisclaimerNote } from "@/components/site/DisclaimerNote";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OpenCheck — Free, privacy-focused plagiarism checker" },
+      { title: "OpenCheck — Free plagiarism & similarity checker for students" },
       {
         name: "description",
         content:
-          "OpenCheck is a free, privacy-focused similarity checker for students, writers, and researchers. Paste your text, review matches, and judge them in context.",
+          "Paste an essay, chapter, or article and see which sentences overlap with existing sources, next to the sources themselves — free, no account, nothing archived.",
       },
-      { property: "og:title", content: "OpenCheck — Free, privacy-focused plagiarism checker" },
+      {
+        property: "og:title",
+        content: "See where your writing overlaps with existing work",
+      },
       {
         property: "og:description",
         content:
-          "A calm, transparent similarity checker for students, writers, and researchers. Similarity is an indicator, not a verdict.",
+          "Review matching sentences beside their possible sources and fix your citations before anyone else reads your draft.",
       },
+      { property: "og:url", content: "https://open-text-check.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/" }],
   }),
   component: HomePage,
 });
+
 
 const FEATURES = [
   {
