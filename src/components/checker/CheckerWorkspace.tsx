@@ -131,11 +131,9 @@ export function CheckerWorkspace() {
               )}
               Clear
             </Button>
-            {!isDetectionEngineConfigured && (
-              <span className="text-xs text-muted-foreground">
-                Detection engine not connected yet
-              </span>
-            )}
+            <span className="text-xs text-muted-foreground">
+              Your text is compared in memory and never stored.
+            </span>
           </div>
 
           {notice && (
@@ -155,7 +153,7 @@ export function CheckerWorkspace() {
               <div>
                 <h3 className="text-sm font-semibold">Upload a document</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  TXT works today. DOCX and PDF parsing arrives with the detection service.
+                  TXT files load straight into the box. For DOCX or PDF, paste the text.
                 </p>
               </div>
             </div>
