@@ -28,7 +28,7 @@ function CheckerPage() {
       <PageHeader
         eyebrow="Checker"
         title="Plagiarism checker"
-        description="Paste your text below. When the OpenCheck detection engine is connected, this page will return an overall similarity figure, the matching sentences, and the sources they resemble."
+        description="Paste your text below and run a check. OpenCheck returns an overall similarity figure, the matching sentences, and the public sources they resemble — nothing you submit is stored."
       />
       <div className="container-page py-10">
         <CheckerWorkspace />
