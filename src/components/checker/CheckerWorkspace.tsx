@@ -34,8 +34,10 @@ export function CheckerWorkspace() {
       setResult(null);
       setNotice(
         error instanceof DetectionEngineUnavailableError
-          ? "The detection engine isn't connected yet, so no results can be produced. This interface is ready for it."
-          : "The detection service couldn't be reached. Please try again later.",
+          ? "The detection engine couldn't be reached. Please try again in a moment."
+          : error instanceof Error && error.message
+            ? error.message
+            : "The check couldn't be completed. Please try again later.",
       );
     } finally {
       setIsChecking(false);
@@ -50,7 +52,7 @@ export function CheckerWorkspace() {
       setNotice(null);
     } else {
       setNotice(
-        `DOCX and PDF parsing will be handled by the OpenCheck service. For now, paste the text of “${file.name}” below.`,
+        `“${file.name}” isn't a plain-text file. Copy its text into the box below to run the check.`,
       );
     }
   }
