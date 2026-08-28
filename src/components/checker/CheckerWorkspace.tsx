@@ -6,7 +6,6 @@ import { ResultsPanel } from "@/components/checker/ResultsPanel";
 import { getTextStats, MAX_WORDS, MIN_WORDS } from "@/lib/plagiarism/text-stats";
 import {
   DetectionEngineUnavailableError,
-  isDetectionEngineConfigured,
   runPlagiarismCheck,
 } from "@/lib/plagiarism/client";
 import type { CheckResult } from "@/lib/plagiarism/types";

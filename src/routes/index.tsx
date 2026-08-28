@@ -52,8 +52,8 @@ const FEATURES = [
   },
   {
     icon: FileText,
-    title: "Documents, later",
-    body: "TXT, DOCX, and PDF uploads are planned alongside plain pasted text.",
+    title: "Documents welcome",
+    body: "TXT files load straight into the checker; for DOCX or PDF, paste the text and it checks the same way.",
   },
   {
     icon: ScanSearch,
@@ -66,7 +66,7 @@ const STEPS = [
   {
     n: "01",
     title: "Add your text",
-    body: "Paste a draft or (soon) upload a document. Word and character counts update as you type.",
+    body: "Paste a draft or load a TXT file. Word and character counts update as you type.",
   },
   {
     n: "02",
@@ -92,7 +92,7 @@ function HomePage() {
         <div className="container-page grid gap-12 py-16 lg:grid-cols-[1.05fr_1fr] lg:items-center lg:py-24">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              Free · Privacy-focused · In development
+              Free · Privacy-focused · No sign-up
             </p>
             <h1 className="mt-4 text-4xl leading-tight sm:text-5xl">
               See where your writing overlaps with existing work.
@@ -111,8 +111,7 @@ function HomePage() {
               </Button>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              The detection engine is still being built — the checker interface is available to
-              explore now.
+              Your text is compared in memory and never stored, logged, or shared.
             </p>
           </div>
 
@@ -141,7 +140,7 @@ function HomePage() {
       <section className="border-y border-border bg-surface" aria-labelledby="how-heading">
         <div className="container-page py-16">
           <h2 id="how-heading" className="text-2xl sm:text-3xl">
-            How a check will work
+            How a check works
           </h2>
           <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step) => (
