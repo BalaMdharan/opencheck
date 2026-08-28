@@ -44,10 +44,19 @@ async function callApi(params: Record<string, string>): Promise<unknown> {
 }
 
 async function searchTitles(query: string): Promise<number[]> {
+  // Quoted phrases with punctuation return no hits; a cleaned, truncated
+  // full-text query reliably surfaces the page the wording came from.
+  const cleaned = query
+    .replace(/[^A-Za-z0-9' ]+/g, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 14)
+    .join(" ");
+  if (!cleaned) return [];
   const data = (await callApi({
     action: "query",
     list: "search",
-    srsearch: `"${query.slice(0, 290)}"`,
+    srsearch: cleaned,
     srlimit: String(RESULTS_PER_QUERY),
   })) as { query?: { search?: Array<{ pageid: number }> } };
   return (data.query?.search ?? []).map((hit) => hit.pageid);
