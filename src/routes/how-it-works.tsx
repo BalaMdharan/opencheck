@@ -34,7 +34,7 @@ const STAGES = [
   },
   {
     title: "3. Fragments are compared",
-    body: "Each fragment is compared against indexed sources using fingerprinting and similarity measures, looking for near-identical wording rather than shared ideas.",
+    body: "Each sentence is compared against public reference sources using wording-overlap and verbatim-phrase measures, looking for near-identical wording rather than shared ideas.",
   },
   {
     title: "4. A report is assembled",
