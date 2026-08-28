@@ -29,39 +29,52 @@ export function ResultsPanel({
             <p className="text-xs text-muted-foreground">Overall similarity</p>
             <p className="font-mono text-3xl">{result.overallSimilarity}%</p>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold">Matching sentences</h3>
-            <ul className="mt-2 space-y-2">
-              {result.matches.map((match) => (
-                <li key={match.id} className="rounded-lg border border-border p-3 text-sm">
-                  <p className="leading-relaxed">{match.sentence}</p>
-                  <p className="mt-1 font-mono text-xs text-muted-foreground">
-                    {match.similarity}% similar
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold">Potentially matching sources</h3>
-            <ul className="mt-2 space-y-2 text-sm">
-              {result.sources.map((source) => (
-                <li key={source.id} className="rounded-lg border border-border p-3">
-                  <span className="font-medium">{source.title}</span>
-                  {source.url && (
-                    <a
-                      href={source.url}
-                      className="mt-1 block break-all text-xs text-primary underline"
-                      rel="noreferrer noopener"
-                      target="_blank"
-                    >
-                      {source.url}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {result.matches.length === 0 && result.sources.length === 0 ? (
+            <div className="rounded-lg border border-border bg-surface p-4 text-sm">
+              <p className="font-medium">No matching sources found</p>
+              <p className="mt-1 leading-relaxed text-muted-foreground">
+                The check ran, but none of your sentences closely matched the sources searched.
+                This doesn't guarantee originality — it only means no overlap was found in the
+                sources checked.
+              </p>
+            </div>
+          ) : (
+            <>
+              <div>
+                <h3 className="text-sm font-semibold">Matching sentences</h3>
+                <ul className="mt-2 space-y-2">
+                  {result.matches.map((match) => (
+                    <li key={match.id} className="rounded-lg border border-border p-3 text-sm">
+                      <p className="leading-relaxed">{match.sentence}</p>
+                      <p className="mt-1 font-mono text-xs text-muted-foreground">
+                        {match.similarity}% similar
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold">Potentially matching sources</h3>
+                <ul className="mt-2 space-y-2 text-sm">
+                  {result.sources.map((source) => (
+                    <li key={source.id} className="rounded-lg border border-border p-3">
+                      <span className="font-medium">{source.title}</span>
+                      {source.url && (
+                        <a
+                          href={source.url}
+                          className="mt-1 block break-all text-xs text-primary underline"
+                          rel="noreferrer noopener"
+                          target="_blank"
+                        >
+                          {source.url}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
         </div>
       ) : (
         <EmptyState />
