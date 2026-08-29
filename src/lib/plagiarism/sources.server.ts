@@ -15,10 +15,10 @@ export type CandidateDocument = {
 
 const API = "https://en.wikipedia.org/w/api.php";
 const USER_AGENT = "OpenCheck/1.0 (open-text-check.lovable.app; similarity checker)";
-const MAX_QUERIED_SENTENCES = 6;
-const RESULTS_PER_QUERY = 4;
-const MAX_DOCUMENTS = 20;
-const MAX_RETRIES = 3;
+const MAX_QUERIED_SENTENCES = 5;
+const RESULTS_PER_QUERY = 3;
+const MAX_DOCUMENTS = 8;
+const MAX_RETRIES = 2;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
