@@ -25,6 +25,7 @@ function percent(score: number): number {
 export async function runCheck(text: string): Promise<CheckResult> {
   const spans = splitSentences(text);
   const documents = await gatherCandidates(spans.map((span) => span.sentence));
+  console.log("DBG spans", spans.length, "docs", documents.map((d) => d.title));
 
   const matches: SentenceMatch[] = [];
   const used = new Map<string, MatchedSource>();
