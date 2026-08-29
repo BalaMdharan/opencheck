@@ -15,10 +15,10 @@ export type CandidateDocument = {
 
 const API = "https://en.wikipedia.org/w/api.php";
 const USER_AGENT = "OpenCheck/1.0 (open-text-check.lovable.app; similarity checker)";
-const MAX_QUERIED_SENTENCES = 6;
-const RESULTS_PER_QUERY = 4;
-const MAX_DOCUMENTS = 20;
-const MAX_RETRIES = 3;
+const MAX_QUERIED_SENTENCES = 5;
+const RESULTS_PER_QUERY = 3;
+const MAX_DOCUMENTS = 8;
+const MAX_RETRIES = 2;
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -62,34 +62,48 @@ async function searchTitles(query: string): Promise<number[]> {
   return (data.query?.search ?? []).map((hit) => hit.pageid);
 }
 
+/**
+ * The extracts API only returns plain-text content for ONE page per request,
+ * so pages are fetched one at a time (with a small pause to stay under the
+ * public API's burst limits).
+ */
 async function fetchExtracts(pageIds: number[]): Promise<CandidateDocument[]> {
-  if (pageIds.length === 0) return [];
-  const data = (await callApi({
-    action: "query",
-    prop: "extracts|info",
-    inprop: "url",
-    explaintext: "1",
-    exlimit: "20",
-    exsectionformat: "plain",
-    pageids: pageIds.join("|"),
-  })) as {
-    query?: {
-      pages?: Record<
-        string,
-        { pageid?: number; title?: string; fullurl?: string; extract?: string }
-      >;
-    };
-  };
+  const documents: CandidateDocument[] = [];
 
-  const pages = Object.values(data.query?.pages ?? {});
-  return pages
-    .filter((page) => page.extract && page.title)
-    .map((page) => ({
-      key: `wikipedia:${page.pageid}`,
-      title: page.title as string,
-      url: page.fullurl ?? `https://en.wikipedia.org/?curid=${page.pageid}`,
-      text: (page.extract as string).slice(0, 40_000),
-    }));
+  for (const pageId of pageIds) {
+    try {
+      const data = (await callApi({
+        action: "query",
+        prop: "extracts|info",
+        inprop: "url",
+        explaintext: "1",
+        exsectionformat: "plain",
+        pageids: String(pageId),
+      })) as {
+        query?: {
+          pages?: Record<
+            string,
+            { pageid?: number; title?: string; fullurl?: string; extract?: string }
+          >;
+        };
+      };
+
+      for (const page of Object.values(data.query?.pages ?? {})) {
+        if (!page.extract || !page.title) continue;
+        documents.push({
+          key: `wikipedia:${page.pageid}`,
+          title: page.title,
+          url: page.fullurl ?? `https://en.wikipedia.org/?curid=${page.pageid}`,
+          text: page.extract.slice(0, 40_000),
+        });
+      }
+    } catch {
+      // One unavailable page shouldn't fail the whole check.
+    }
+    await sleep(300);
+  }
+
+  return documents;
 }
 
 /** Pick the most distinctive sentences so we spend few API calls well. */
@@ -112,7 +126,7 @@ export async function gatherCandidates(sentences: string[]): Promise<CandidateDo
     } catch {
       // A failed query just yields fewer candidates; keep going.
     }
-    await sleep(400);
+    await sleep(600);
   }
 
   try {
