@@ -126,7 +126,7 @@ export async function gatherCandidates(sentences: string[]): Promise<CandidateDo
     } catch {
       // A failed query just yields fewer candidates; keep going.
     }
-    await sleep(1500);
+    await sleep(600);
   }
 
   try {
