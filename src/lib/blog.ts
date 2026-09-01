@@ -224,7 +224,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "How OpenCheck handles this",
         paragraphs: [
           "OpenCheck compares your text against public sources and then discards it. Submissions are not added to a corpus, there is no account to create, and there is no word-count paywall waiting at the end of the check. The trade-off is that OpenCheck cannot detect one student copying another's unpublished essay — that capability only exists for vendors who kept the essays.",
-          "You can run a check at ",
+          "Whichever tool you use, run the check early. A report read a week before the deadline is a proofreading aid for your citations; the same report an hour before submission is only a source of panic.",
         ],
       },
     ],
