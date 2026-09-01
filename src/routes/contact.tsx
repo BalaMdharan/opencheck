@@ -18,7 +18,9 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Questions, feedback, accessibility issues, or privacy requests — reach the team.",
       },
+      { property: "og:url", content: "https://open-text-check.lovable.app/contact" },
     ],
+    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/contact" }],
   }),
   component: ContactPage,
 });

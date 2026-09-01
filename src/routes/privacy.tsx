@@ -15,7 +15,9 @@ export const Route = createFileRoute("/privacy")({
         property: "og:description",
         content: "What OpenCheck does and does not do with your writing.",
       },
+      { property: "og:url", content: "https://open-text-check.lovable.app/privacy" },
     ],
+    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/privacy" }],
   }),
   component: PrivacyPage,
 });
