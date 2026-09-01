@@ -17,7 +17,9 @@ export const Route = createFileRoute("/checker")({
         content:
           "The OpenCheck checker workspace: paste your text, track word count, and see where similarity results will appear.",
       },
+      { property: "og:url", content: "https://open-text-check.lovable.app/checker" },
     ],
+    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/checker" }],
   }),
   component: CheckerPage,
 });

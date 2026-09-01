@@ -16,7 +16,9 @@ export const Route = createFileRoute("/about")({
         content:
           "Why OpenCheck is free, privacy-focused, and deliberately limited to plagiarism and similarity detection.",
       },
+      { property: "og:url", content: "https://open-text-check.lovable.app/about" },
     ],
+    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/about" }],
   }),
   component: AboutPage,
 });
