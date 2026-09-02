@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as CheckerRouteImport } from './routes/checker'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FreePlagiarismCheckerForStudentsRouteImport } from './routes/free-plagiarism-checker-for-students'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -45,6 +46,12 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FreePlagiarismCheckerForStudentsRoute =
+  FreePlagiarismCheckerForStudentsRouteImport.update({
+    id: '/free-plagiarism-checker-for-students',
+    path: '/free-plagiarism-checker-for-students',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const HowItWorksRoute = HowItWorksRouteImport.update({
   id: '/how-it-works',
   path: '/how-it-works',
@@ -77,6 +84,7 @@ export interface FileRoutesByFullPath {
   '/blog': typeof BlogRouteWithChildren
   '/checker': typeof CheckerRoute
   '/contact': typeof ContactRoute
+  '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -89,6 +97,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogRouteWithChildren
   '/checker': typeof CheckerRoute
   '/contact': typeof ContactRoute
+  '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -102,6 +111,7 @@ export interface FileRoutesById {
   '/blog': typeof BlogRouteWithChildren
   '/checker': typeof CheckerRoute
   '/contact': typeof ContactRoute
+  '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -116,6 +126,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/checker'
     | '/contact'
+    | '/free-plagiarism-checker-for-students'
     | '/how-it-works'
     | '/privacy'
     | '/sitemap.xml'
@@ -128,6 +139,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/checker'
     | '/contact'
+    | '/free-plagiarism-checker-for-students'
     | '/how-it-works'
     | '/privacy'
     | '/sitemap.xml'
@@ -140,6 +152,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/checker'
     | '/contact'
+    | '/free-plagiarism-checker-for-students'
     | '/how-it-works'
     | '/privacy'
     | '/sitemap.xml'
@@ -153,6 +166,7 @@ export interface RootRouteChildren {
   BlogRoute: typeof BlogRouteWithChildren
   CheckerRoute: typeof CheckerRoute
   ContactRoute: typeof ContactRoute
+  FreePlagiarismCheckerForStudentsRoute: typeof FreePlagiarismCheckerForStudentsRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -194,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/free-plagiarism-checker-for-students': {
+      id: '/free-plagiarism-checker-for-students'
+      path: '/free-plagiarism-checker-for-students'
+      fullPath: '/free-plagiarism-checker-for-students'
+      preLoaderRoute: typeof FreePlagiarismCheckerForStudentsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/how-it-works': {
@@ -250,6 +271,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogRoute: BlogRouteWithChildren,
   CheckerRoute: CheckerRoute,
   ContactRoute: ContactRoute,
+  FreePlagiarismCheckerForStudentsRoute: FreePlagiarismCheckerForStudentsRoute,
   HowItWorksRoute: HowItWorksRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
