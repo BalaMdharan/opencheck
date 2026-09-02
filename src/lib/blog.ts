@@ -368,6 +368,231 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "does-turnitin-detect-paraphrasing",
+    title: "Does Turnitin detect paraphrasing?",
+    category: "Questions",
+    summary:
+      "What similarity software can and cannot see when a passage has been reworded, and why the safer question is whether the idea was credited.",
+    readingTime: "4 min read",
+    intro:
+      "Students ask this constantly, usually while staring at a paragraph they have already rewritten twice. The honest answer is: sometimes, partly, and less reliably than people assume — but that is the wrong thing to optimise for.",
+    sections: [
+      {
+        heading: "What the software actually compares",
+        paragraphs: [
+          "Similarity tools index text and look for overlapping strings of words. A light paraphrase that keeps the sentence structure and swaps a few synonyms usually still trips a match, because enough consecutive words survive. A genuine restatement — different structure, different emphasis, your own analysis threaded through — often does not produce a string match at all.",
+          "Some systems add sentence-level comparison that is less dependent on exact wording, so heavily reworded passages can still surface. Coverage varies by product and by what is in the index, which is why nobody can promise you a specific outcome.",
+        ],
+      },
+      {
+        heading: "Why detection is the wrong target",
+        paragraphs: [
+          "A paraphrase that escapes detection is still plagiarism if the idea came from a source and the source is not credited. Academic misconduct is defined by attribution, not by whether software noticed. Markers read for argument, and an uncited claim that clearly belongs to someone else is visible to a human long before it is visible to a tool.",
+          "Turn it around: if you cite the source, it does not matter whether the paraphrase is detected. The match becomes explainable in one sentence, which is the standard any passage in your document should meet.",
+        ],
+      },
+      {
+        heading: "How to paraphrase properly",
+        paragraphs: [
+          "Close the source. Write what you understood in your own words, from memory. Reopen the source only to check accuracy and to add the citation. If you cannot restate the point without the original in front of you, quote it instead.",
+        ],
+        bullets: [
+          "Change structure and emphasis, not just vocabulary.",
+          "Add your own reasoning about why the point matters.",
+          "Cite the source even when no words are shared.",
+          "Quote directly when the original phrasing is the point.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "plagiarism-checker-that-does-not-store-your-work",
+    title: "How to find a plagiarism checker that does not store your work",
+    category: "Privacy",
+    summary:
+      "Many free checkers keep a copy of what you submit. What to look for in the terms, and why storage matters for unpublished coursework.",
+    readingTime: "4 min read",
+    intro:
+      "Free tools have to pay for themselves somehow. For a fair number of plagiarism checkers, the payment is your text: submitted documents are retained, indexed, and used to grow the corpus other users are checked against.",
+    sections: [
+      {
+        heading: "Why retention is a real problem",
+        paragraphs: [
+          "If your unpublished draft enters a reuse database, a later check of your own final version can match against your earlier submission. Students have been asked to explain similarity against a document they wrote themselves. For researchers, an unpublished manuscript sitting in a third-party index is a confidentiality issue before it is anything else.",
+        ],
+      },
+      {
+        heading: "What to look for",
+        paragraphs: [
+          "Read the privacy policy for the words retain, store, index, and improve our services. Vague commitments to security are not commitments to deletion.",
+        ],
+        bullets: [
+          "An explicit statement that submitted text is not retained after the check.",
+          "No requirement to create an account before checking.",
+          "No clause granting a licence to use your content.",
+          "A clear answer on whether submissions join a comparison database.",
+        ],
+      },
+      {
+        heading: "How OpenCheck handles it",
+        paragraphs: [
+          "Text you paste is compared in memory during the request and discarded when the response is sent. It is not written to a database, not added to a corpus, and not used to check anyone else's work. There is no account, so there is nothing to attach a document history to.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "how-to-cite-sources-correctly",
+    title: "How to cite sources correctly and avoid accidental plagiarism",
+    category: "Guides",
+    summary:
+      "Most plagiarism in student work is accidental. A short, practical routine for keeping attribution straight from first note to final draft.",
+    readingTime: "5 min read",
+    intro:
+      "Very few students set out to plagiarise. Far more lose track of which sentence in their notes was copied and which was their own summary, then discover the problem after submission.",
+    sections: [
+      {
+        heading: "The problem starts at note-taking",
+        paragraphs: [
+          "If your notes mix verbatim extracts with your own paraphrases and no markers between them, the draft you write from those notes will inherit the confusion. Fix it at the source: put every copied string in quotation marks with a page number the moment you record it, and prefix your own thoughts with a bracketed note.",
+        ],
+      },
+      {
+        heading: "What always needs a citation",
+        paragraphs: [
+          "Attribution is owed to the idea, not only to the wording. When in doubt, cite — an unnecessary citation costs nothing.",
+        ],
+        bullets: [
+          "Direct quotations, however short.",
+          "Paraphrases and summaries of another author's argument.",
+          "Data, figures, and results you did not generate.",
+          "A distinctive framing, taxonomy, or method attributable to someone.",
+          "Images, tables, and diagrams reproduced or adapted.",
+        ],
+      },
+      {
+        heading: "What does not need one",
+        paragraphs: [
+          "Common knowledge in your field, and your own original analysis. If the fact appears without attribution in several general sources, you do not need to cite it. If you are unsure whether something counts as common knowledge in your discipline, ask your supervisor rather than guessing.",
+        ],
+      },
+      {
+        heading: "A final check before submitting",
+        paragraphs: [
+          "Run the finished draft through a similarity check with the quotes still in, then read each match and confirm it is either credited or genuinely common phrasing. That single pass catches almost every accidental omission.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "plagiarism-checker-for-bloggers-and-writers",
+    title: "Plagiarism checking for bloggers, freelancers, and content teams",
+    category: "Guides",
+    summary:
+      "Duplicate content risks, checking work from freelance writers, and how to verify originality without sending client drafts into someone's database.",
+    readingTime: "4 min read",
+    intro:
+      "Plagiarism checking is not just an academic concern. If you publish for clients or commission writing, unoriginal copy is a reputational and search-visibility problem before it is an ethical one.",
+    sections: [
+      {
+        heading: "Why publishers check",
+        paragraphs: [
+          "Commissioned articles occasionally arrive with passages lifted from the first page of search results. Publishing them exposes you to takedown requests, client disputes, and search engines treating your page as a duplicate of an older, stronger one.",
+          "A quick similarity pass before publication catches the obvious cases: whole paragraphs copied from a competitor, product descriptions pasted from a manufacturer, or a rewrite so light the original is still visible.",
+        ],
+      },
+      {
+        heading: "Reading results for web content",
+        paragraphs: [
+          "Expect some overlap on any factual topic. Product names, statistics, standard definitions, and short common phrases will match. What matters is contiguous, substantive passages that mirror one specific source.",
+        ],
+        bullets: [
+          "Long matched runs against a single source: investigate.",
+          "Scattered short matches across many sources: usually normal phrasing.",
+          "Quoted expert commentary: fine, if attributed.",
+        ],
+      },
+      {
+        heading: "Keeping client work private",
+        paragraphs: [
+          "Unpublished client drafts should not be retained by a checking service. OpenCheck compares text in memory and discards it, with no account and no stored history — which makes it usable for drafts you are contractually required to keep confidential.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "what-happens-if-you-are-accused-of-plagiarism",
+    title: "What happens if you are accused of plagiarism",
+    category: "Questions",
+    summary:
+      "The usual process at a university, what evidence matters, and the practical steps to take if a similarity report is raised against your work.",
+    readingTime: "5 min read",
+    intro:
+      "An academic integrity query is frightening, but it is a process with defined stages, and a high similarity score on its own is not a finding of misconduct.",
+    sections: [
+      {
+        heading: "How the process usually runs",
+        paragraphs: [
+          "Typically a marker flags a concern, the department reviews the report alongside the submission, and you are invited to respond — often in a short meeting. Most cases end there, either because the overlap is explainable or because it is treated as a citation error rather than misconduct. Formal panels are for serious or repeated cases.",
+        ],
+      },
+      {
+        heading: "What actually helps your case",
+        paragraphs: [
+          "Evidence of process. Drafts, notes with sources recorded, reading lists, and version history all demonstrate that the work was built rather than assembled.",
+        ],
+        bullets: [
+          "Keep dated drafts and research notes for every assignment.",
+          "Be able to explain each matched passage in one sentence.",
+          "Respond promptly and factually; do not improvise explanations.",
+          "Ask your students' union or an academic adviser for support early.",
+        ],
+      },
+      {
+        heading: "Preventing it next time",
+        paragraphs: [
+          "The habits that protect you are unglamorous: mark quotations in your notes, cite paraphrases, and run a similarity check on the finished draft with enough time to fix what it finds. Nearly every accidental case traces back to notes that lost track of what was copied.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "free-vs-paid-plagiarism-checkers",
+    title: "Free vs paid plagiarism checkers: what you actually get",
+    category: "Questions",
+    summary:
+      "Where paid tools genuinely differ, where free ones are sufficient, and the hidden cost of free checkers that keep your text.",
+    readingTime: "4 min read",
+    intro:
+      "Paid checkers are not simply better versions of free ones. The real difference is what they compare against and who they answer to.",
+    sections: [
+      {
+        heading: "What paid tools buy you",
+        paragraphs: [
+          "Mostly index size and institutional context. Systems used by universities compare against a repository of previously submitted student papers, which no public tool can access. They also integrate with submission workflows and produce reports markers already know how to read.",
+          "That repository is the reason no free tool can predict an institutional score. It is not a matter of algorithm quality.",
+        ],
+      },
+      {
+        heading: "What free tools are genuinely good for",
+        paragraphs: [
+          "Catching the problems you can still fix: uncredited passages, forgotten quotation marks, paraphrases too close to the original. That is the majority of accidental plagiarism, and it does not require a private corpus to find.",
+        ],
+      },
+      {
+        heading: "The hidden cost",
+        paragraphs: [
+          "Many free checkers pay for themselves by keeping what you submit. Before pasting an unpublished draft anywhere, check whether the service retains it. A tool that discards your text after the check — as OpenCheck does — costs nothing and takes nothing.",
+        ],
+        bullets: [
+          "Free and retained: your draft becomes part of someone's product.",
+          "Free and stateless: text compared in memory, then gone.",
+          "Paid institutional: the only route to a repository-backed score.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
