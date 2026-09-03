@@ -593,6 +593,231 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-to-check-plagiarism-in-an-essay",
+    title: "How to check plagiarism in an essay, step by step",
+    category: "Guides",
+    summary:
+      "A practical checking routine for an essay: what to check, in what order, and how to act on the report without rewriting good prose.",
+    readingTime: "4 min read",
+    intro:
+      "Checking an essay for plagiarism is a ten-minute job if you do it in the right order. Most of the time people lose is spent rewriting sentences that never needed changing.",
+    sections: [
+      {
+        heading: "Check the finished draft, not a work in progress",
+        paragraphs: [
+          "Run the check once the argument is settled and the citations are in. Checking an early draft produces matches for passages you are about to cut, and checking after submission is too late to be useful.",
+          "Paste the body text. You can leave the reference list out of the check: it will match every other bibliography citing the same works, and those matches tell you nothing.",
+        ],
+      },
+      {
+        heading: "Work through the report match by match",
+        paragraphs: [
+          "For each highlighted passage, open the source beside it and ask whether a reader already knows the words came from elsewhere. If the passage is quoted and cited, or paraphrased and attributed, it is fine regardless of how much of the score it accounts for.",
+        ],
+        bullets: [
+          "Quoted with a citation: verify the quotation marks and page number, then move on.",
+          "Standard phrasing on a common topic: leave it; rewriting makes the prose worse.",
+          "A close paraphrase with no citation: add the citation, or quote it properly.",
+          "Someone else's argument or data presented as yours: cite the source, or cut it.",
+        ],
+      },
+      {
+        heading: "Leave time to fix what you find",
+        paragraphs: [
+          "The only failure mode that matters is finding a real problem an hour before the deadline. Check the day before, so an added citation is a two-minute edit rather than a panic.",
+          "OpenCheck reports where your text overlaps with published sources and stops there. It does not score your honesty, and it does not keep your draft.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "plagiarism-checker-for-research-papers",
+    title: "Using a plagiarism checker on a research paper before submission",
+    category: "Guides",
+    summary:
+      "Why methods sections and literature reviews inflate similarity scores, and what journal editors actually look for.",
+    readingTime: "4 min read",
+    intro:
+      "Research papers produce higher similarity scores than essays, and for structural reasons rather than dishonest ones. Knowing which parts of your paper generate matches makes the report far easier to read.",
+    sections: [
+      {
+        heading: "Where the matches come from",
+        paragraphs: [
+          "Methods sections describe standard procedures in standard language, because deviating from the accepted wording makes a protocol harder to reproduce. Literature reviews restate published findings. Both generate overlap that a marker or editor expects to see.",
+          "Titles, journal names, funding declarations and ethics statements match too. None of it is a finding.",
+        ],
+      },
+      {
+        heading: "What editors actually screen for",
+        paragraphs: [
+          "Editors look for substantive reuse: a discussion section lifted from another paper, results text recycled from your own earlier publication without disclosure, or paragraphs of a review reproduced verbatim. A high overall percentage spread across a methods section and a reference list rarely concerns anyone.",
+          "Reusing your own previously published text counts too. Disclose it and cite the earlier paper rather than hoping the overlap goes unnoticed.",
+        ],
+      },
+      {
+        heading: "A pre-submission pass",
+        paragraphs: [
+          "Check the sections you wrote from scratch — introduction, discussion, conclusion — with the most attention. That is where uncredited borrowing hides, and where a citation fixes it entirely.",
+        ],
+        bullets: [
+          "Confirm every quoted passage is marked and cited.",
+          "Confirm every paraphrased finding names its source.",
+          "Disclose any text reused from your own earlier work.",
+          "Ignore matches in references, declarations and standard protocols.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "why-similarity-scores-differ-between-tools",
+    title: "Why two plagiarism checkers give you different scores",
+    category: "Questions",
+    summary:
+      "Different tools compare against different text. The number is a property of the index, not of your writing.",
+    readingTime: "3 min read",
+    intro:
+      "Running the same document through two checkers and getting two different percentages is normal, and it is not evidence that one of them is broken.",
+    sections: [
+      {
+        heading: "The index decides the score",
+        paragraphs: [
+          "A similarity score answers one question: how much of this text matched something in the corpus I searched? Change the corpus and the answer changes. A tool with access to a repository of student submissions will find matches a public tool cannot see, and a tool indexing academic publishers will find matches a general web search misses.",
+          "Two honest tools with different indexes will disagree about the same document. Neither number is the true score, because there is no true score.",
+        ],
+      },
+      {
+        heading: "Matching rules matter too",
+        paragraphs: [
+          "Tools differ in how long a matched string must be before it counts, whether they exclude quotations and reference lists, and whether they count near-matches or only exact ones. Those choices can move a percentage by ten points without a single word of your text changing.",
+        ],
+      },
+      {
+        heading: "What to do with the disagreement",
+        paragraphs: [
+          "Treat every score as a pointer to passages worth reading, not as a grade. If one tool flags a paragraph the other missed, read that paragraph — the flag is useful even when the percentage is not comparable.",
+          "This is why OpenCheck shows you the matched passages and the sources rather than presenting a percentage as a verdict.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "common-types-of-plagiarism",
+    title: "The common types of plagiarism, and which ones catch honest writers",
+    category: "Guides",
+    summary:
+      "Direct copying is the rarest kind. Mosaic plagiarism, unattributed paraphrase and lost citations account for most real cases.",
+    readingTime: "4 min read",
+    intro:
+      "Deliberate copying is easy to describe and comparatively rare. The cases that catch careful writers are the ones that begin as sloppy note-taking.",
+    sections: [
+      {
+        heading: "Direct plagiarism",
+        paragraphs: [
+          "Copying a passage word for word with no quotation marks and no citation. Obvious, and easily avoided — but also what happens accidentally when a quotation is pasted into notes and later drafted around.",
+        ],
+      },
+      {
+        heading: "Mosaic or patchwork plagiarism",
+        paragraphs: [
+          "Weaving phrases from a source into your own sentences, swapping a few words, and citing nothing. This is the most common form in student work, and it usually reflects a writer working with the source open beside them rather than an intent to deceive.",
+        ],
+      },
+      {
+        heading: "Unattributed paraphrase",
+        paragraphs: [
+          "Restating someone else's argument or data in your own words without naming them. The obligation attaches to the idea, not only to the wording, so rewording does not discharge it.",
+        ],
+      },
+      {
+        heading: "Self-plagiarism and lost citations",
+        paragraphs: [
+          "Reusing your own submitted or published work without disclosure counts in most institutions. So does a citation that fell out during editing — the text now presents borrowed material as original even though you never intended it to.",
+        ],
+        bullets: [
+          "Mark quotations in your notes the moment you copy them.",
+          "Record the source and page for every paraphrase as you write it.",
+          "Re-check citations after any heavy round of editing.",
+          "Disclose reuse of your own earlier work.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "is-it-safe-to-upload-your-essay-to-a-plagiarism-checker",
+    title: "Is it safe to upload your essay to a plagiarism checker?",
+    category: "Privacy",
+    summary:
+      "What can happen to a document you submit to a checking service, and how to tell whether a tool keeps your text.",
+    readingTime: "4 min read",
+    intro:
+      "It depends entirely on what the service does with your file after the check, and most tools do not make that obvious.",
+    sections: [
+      {
+        heading: "The real risks",
+        paragraphs: [
+          "The concern is not usually a data breach. It is retention: a service that stores your draft can index it, so a passage of your own unpublished work reappears as a match when you or someone else checks later. Some tools also state in their terms that submissions may be used to improve their product.",
+          "For an unpublished thesis or paid client work, that is a genuine problem rather than a theoretical one.",
+        ],
+      },
+      {
+        heading: "How to tell before you paste",
+        paragraphs: [
+          "Look for an explicit statement about what happens to your text, not a general privacy policy. The wording you want is that submissions are processed in memory and discarded, and that they are not added to any index or used for training.",
+        ],
+        bullets: [
+          "Does the service say it stores submissions? If it is silent, assume it does.",
+          "Does it require an account before checking? Accounts exist to link submissions to you.",
+          "Does it offer to keep a history of your checks? That history is stored text.",
+          "Do the terms mention using submissions to improve the service?",
+        ],
+      },
+      {
+        heading: "The stateless alternative",
+        paragraphs: [
+          "OpenCheck compares your text against public sources in memory and discards it when the response is returned. There is no account, no history, and nothing added to an index — which also means we cannot show you a past report, because we do not have one.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "how-plagiarism-detection-works",
+    title: "How plagiarism detection actually works",
+    category: "Explainers",
+    summary:
+      "Text splitting, fingerprinting, candidate retrieval and similarity scoring — the mechanics behind a similarity report, without the marketing.",
+    readingTime: "5 min read",
+    intro:
+      "Plagiarism detection is text comparison, not judgement. Understanding the four steps involved explains most of the surprising things a report does.",
+    sections: [
+      {
+        heading: "Step one: splitting the text",
+        paragraphs: [
+          "Your document is broken into units — sentences, or overlapping windows of a fixed number of words. Comparison happens per unit, which is why a report can highlight one sentence in a paragraph and ignore the rest.",
+        ],
+      },
+      {
+        heading: "Step two: finding candidates",
+        paragraphs: [
+          "No system compares your text against the whole internet. It picks distinctive phrases and retrieves a shortlist of documents likely to be relevant, then compares against those. This is the step that determines what a tool can possibly find, and it is why index size matters more than algorithm cleverness.",
+        ],
+      },
+      {
+        heading: "Step three: measuring overlap",
+        paragraphs: [
+          "Two measures do most of the work. Verbatim matching looks for runs of identical words — typically four or more in sequence — which catches copying directly. Vector similarity compares word-frequency profiles, which catches restructured text that reuses the same vocabulary.",
+          "Combining them is what lets a tool distinguish a copied sentence from a page that merely discusses the same subject.",
+        ],
+      },
+      {
+        heading: "Step four: reporting, not deciding",
+        paragraphs: [
+          "The output is a set of matched passages with the sources they resemble, and a percentage derived from how much of the document those passages cover. Nothing in the pipeline knows whether a match is a cited quotation or an uncredited lift — that distinction lives in the citation, which is a human decision.",
+          "Any tool claiming to detect intent is overstating what the mechanics can support.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
