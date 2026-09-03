@@ -66,6 +66,24 @@ function BlogPostPage() {
             ) : null}
           </section>
         ))}
+        <aside className="rounded-lg border bg-muted/40 p-6 not-prose">
+          <h2 className="text-lg font-semibold text-foreground">Check your own text, free</h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Paste your draft into OpenCheck to see where it overlaps with published sources. No
+            sign-up, and your text is compared in memory and discarded — never stored.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+            <Link to="/checker" className="text-primary hover:underline">
+              Run a free plagiarism check →
+            </Link>
+            <Link
+              to="/free-plagiarism-checker-for-students"
+              className="text-primary hover:underline"
+            >
+              For students →
+            </Link>
+          </div>
+        </aside>
         <p>
           <Link to="/blog">← Back to all articles</Link>
         </p>
