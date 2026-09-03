@@ -21,9 +21,9 @@ export const Route = createFileRoute("/")({
         content:
           "Review matching sentences beside their possible sources and fix your citations before anyone else reads your draft.",
       },
-      { property: "og:url", content: "https://open-text-check.lovable.app/" },
+      { property: "og:url", content: "https://openchecknow.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/" }],
   }),
   component: HomePage,
 });

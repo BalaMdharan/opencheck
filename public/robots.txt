@@ -13,5 +13,5 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://open-text-check.lovable.app/sitemap.xml
+Sitemap: https://openchecknow.lovable.app/sitemap.xml
 

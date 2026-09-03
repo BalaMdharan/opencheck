@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/site/PageHeader";
 import { CheckerWorkspace } from "@/components/checker/CheckerWorkspace";
 import { Button } from "@/components/ui/button";
 
-const URL = "https://open-text-check.lovable.app/free-plagiarism-checker-for-students";
+const URL = "https://openchecknow.lovable.app/free-plagiarism-checker-for-students";
 
 const FAQS = [
   {

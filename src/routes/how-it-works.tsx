@@ -18,9 +18,9 @@ export const Route = createFileRoute("/how-it-works")({
         content:
           "From pasted text to reviewed matches: the steps behind an OpenCheck similarity report, and its limits.",
       },
-      { property: "og:url", content: "https://open-text-check.lovable.app/how-it-works" },
+      { property: "og:url", content: "https://openchecknow.lovable.app/how-it-works" },
     ],
-    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/how-it-works" }],
+    links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/how-it-works" }],
   }),
   component: HowItWorksPage,
 });
