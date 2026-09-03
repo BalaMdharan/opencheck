@@ -14,7 +14,7 @@ export type CandidateDocument = {
 };
 
 const API = "https://en.wikipedia.org/w/api.php";
-const USER_AGENT = "OpenCheck/1.0 (open-text-check.lovable.app; similarity checker)";
+const USER_AGENT = "OpenCheck/1.0 (openchecknow.lovable.app; similarity checker)";
 const MAX_QUERIED_SENTENCES = 5;
 const RESULTS_PER_QUERY = 3;
 const MAX_DOCUMENTS = 8;

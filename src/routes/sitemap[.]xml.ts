@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { BLOG_POSTS } from "@/lib/blog";
 
-const BASE_URL = "https://open-text-check.lovable.app";
+const BASE_URL = "https://openchecknow.lovable.app";
 
 interface SitemapEntry {
   path: string;

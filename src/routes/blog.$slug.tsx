@@ -10,7 +10,7 @@ export const Route = createFileRoute("/blog/$slug")({
   },
   head: ({ params, loaderData }) => {
     const post = loaderData?.post;
-    const url = `https://open-text-check.lovable.app/blog/${params.slug}`;
+    const url = `https://openchecknow.lovable.app/blog/${params.slug}`;
     if (!post) return {};
     return {
       meta: [

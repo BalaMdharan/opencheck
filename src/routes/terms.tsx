@@ -15,9 +15,9 @@ export const Route = createFileRoute("/terms")({
         property: "og:description",
         content: "Acceptable use and the explicit limits of OpenCheck similarity results.",
       },
-      { property: "og:url", content: "https://open-text-check.lovable.app/terms" },
+      { property: "og:url", content: "https://openchecknow.lovable.app/terms" },
     ],
-    links: [{ rel: "canonical", href: "https://open-text-check.lovable.app/terms" }],
+    links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/terms" }],
   }),
   component: TermsPage,
 });
