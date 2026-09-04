@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { getPostBySlug } from "@/lib/blog";
+import { breadcrumbLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -35,6 +36,14 @@ export const Route = createFileRoute("/blog/$slug")({
             author: { "@type": "Organization", name: "OpenCheck" },
             publisher: { "@type": "Organization", name: "OpenCheck" },
           }),
+        },
+        {
+          type: "application/ld+json",
+          children: breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+            { name: post.title, path: `/blog/${params.slug}` },
+          ]),
         },
       ],
     };

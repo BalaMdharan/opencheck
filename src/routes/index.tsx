@@ -111,12 +111,24 @@ function HomePage() {
               </Button>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              Your text is compared in memory and never stored, logged, or shared. Studying? Use the{" "}
+              Your text is compared in memory and never stored, logged, or shared. Tailored pages
+              for{" "}
               <Link
                 to="/free-plagiarism-checker-for-students"
                 className="text-primary hover:underline"
               >
-                free plagiarism checker for students
+                students
+              </Link>
+              ,{" "}
+              <Link
+                to="/plagiarism-checker-for-researchers"
+                className="text-primary hover:underline"
+              >
+                researchers
+              </Link>
+              , and{" "}
+              <Link to="/plagiarism-checker-for-bloggers" className="text-primary hover:underline">
+                bloggers and writers
               </Link>
               .
             </p>

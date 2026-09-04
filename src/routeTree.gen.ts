@@ -16,6 +16,8 @@ import { Route as CheckerRouteImport } from './routes/checker'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FreePlagiarismCheckerForStudentsRouteImport } from './routes/free-plagiarism-checker-for-students'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as PlagiarismCheckerForBloggersRouteImport } from './routes/plagiarism-checker-for-bloggers'
+import { Route as PlagiarismCheckerForResearchersRouteImport } from './routes/plagiarism-checker-for-researchers'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -57,6 +59,18 @@ const HowItWorksRoute = HowItWorksRouteImport.update({
   path: '/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlagiarismCheckerForBloggersRoute =
+  PlagiarismCheckerForBloggersRouteImport.update({
+    id: '/plagiarism-checker-for-bloggers',
+    path: '/plagiarism-checker-for-bloggers',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PlagiarismCheckerForResearchersRoute =
+  PlagiarismCheckerForResearchersRouteImport.update({
+    id: '/plagiarism-checker-for-researchers',
+    path: '/plagiarism-checker-for-researchers',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -86,6 +100,8 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/plagiarism-checker-for-bloggers': typeof PlagiarismCheckerForBloggersRoute
+  '/plagiarism-checker-for-researchers': typeof PlagiarismCheckerForResearchersRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -99,6 +115,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/plagiarism-checker-for-bloggers': typeof PlagiarismCheckerForBloggersRoute
+  '/plagiarism-checker-for-researchers': typeof PlagiarismCheckerForResearchersRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -113,6 +131,8 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
   '/how-it-works': typeof HowItWorksRoute
+  '/plagiarism-checker-for-bloggers': typeof PlagiarismCheckerForBloggersRoute
+  '/plagiarism-checker-for-researchers': typeof PlagiarismCheckerForResearchersRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
@@ -128,6 +148,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/free-plagiarism-checker-for-students'
     | '/how-it-works'
+    | '/plagiarism-checker-for-bloggers'
+    | '/plagiarism-checker-for-researchers'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
@@ -141,6 +163,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/free-plagiarism-checker-for-students'
     | '/how-it-works'
+    | '/plagiarism-checker-for-bloggers'
+    | '/plagiarism-checker-for-researchers'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
@@ -154,6 +178,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/free-plagiarism-checker-for-students'
     | '/how-it-works'
+    | '/plagiarism-checker-for-bloggers'
+    | '/plagiarism-checker-for-researchers'
     | '/privacy'
     | '/sitemap.xml'
     | '/terms'
@@ -168,6 +194,8 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FreePlagiarismCheckerForStudentsRoute: typeof FreePlagiarismCheckerForStudentsRoute
   HowItWorksRoute: typeof HowItWorksRoute
+  PlagiarismCheckerForBloggersRoute: typeof PlagiarismCheckerForBloggersRoute
+  PlagiarismCheckerForResearchersRoute: typeof PlagiarismCheckerForResearchersRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
@@ -224,6 +252,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/plagiarism-checker-for-bloggers': {
+      id: '/plagiarism-checker-for-bloggers'
+      path: '/plagiarism-checker-for-bloggers'
+      fullPath: '/plagiarism-checker-for-bloggers'
+      preLoaderRoute: typeof PlagiarismCheckerForBloggersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plagiarism-checker-for-researchers': {
+      id: '/plagiarism-checker-for-researchers'
+      path: '/plagiarism-checker-for-researchers'
+      fullPath: '/plagiarism-checker-for-researchers'
+      preLoaderRoute: typeof PlagiarismCheckerForResearchersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -273,6 +315,8 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FreePlagiarismCheckerForStudentsRoute: FreePlagiarismCheckerForStudentsRoute,
   HowItWorksRoute: HowItWorksRoute,
+  PlagiarismCheckerForBloggersRoute: PlagiarismCheckerForBloggersRoute,
+  PlagiarismCheckerForResearchersRoute: PlagiarismCheckerForResearchersRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
