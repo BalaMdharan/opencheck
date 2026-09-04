@@ -112,6 +112,41 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://openchecknow.lovable.app/#organization",
+              name: "OpenCheck",
+              url: "https://openchecknow.lovable.app/",
+              description:
+                "OpenCheck is a free, privacy-focused plagiarism and similarity checker for students, writers, and researchers.",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://openchecknow.lovable.app/#website",
+              name: "OpenCheck",
+              url: "https://openchecknow.lovable.app/",
+              publisher: { "@id": "https://openchecknow.lovable.app/#organization" },
+              inLanguage: "en",
+            },
+            {
+              "@type": "WebApplication",
+              name: "OpenCheck Plagiarism Checker",
+              url: "https://openchecknow.lovable.app/checker",
+              applicationCategory: "EducationalApplication",
+              operatingSystem: "Any (web browser)",
+              publisher: { "@id": "https://openchecknow.lovable.app/#organization" },
+              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
