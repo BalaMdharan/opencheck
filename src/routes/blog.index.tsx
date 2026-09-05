@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
 import { BLOG_POSTS } from "@/lib/blog";
 
-export const Route = createFileRoute("/blog_")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Blog — OpenCheck on citation, similarity, and academic writing" },
