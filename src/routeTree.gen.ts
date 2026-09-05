@@ -11,7 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BlogRouteImport } from './routes/blog_'
 import { Route as CheckerRouteImport } from './routes/checker'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as FreePlagiarismCheckerForStudentsRouteImport } from './routes/free-plagiarism-checker-for-students'
@@ -34,7 +34,7 @@ const AboutRoute = AboutRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
+  id: '/blog_',
   path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
@@ -95,7 +95,7 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/blog': typeof BlogRoute
   '/checker': typeof CheckerRoute
   '/contact': typeof ContactRoute
   '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
@@ -110,7 +110,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/blog': typeof BlogRoute
   '/checker': typeof CheckerRoute
   '/contact': typeof ContactRoute
   '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
@@ -126,7 +126,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
+  '/blog_': typeof BlogRoute
   '/checker': typeof CheckerRoute
   '/contact': typeof ContactRoute
   '/free-plagiarism-checker-for-students': typeof FreePlagiarismCheckerForStudentsRoute
@@ -173,7 +173,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/blog'
+    | '/blog_'
     | '/checker'
     | '/contact'
     | '/free-plagiarism-checker-for-students'
@@ -189,7 +189,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRouteWithChildren
+  BlogRoute: typeof BlogRoute
   CheckerRoute: typeof CheckerRoute
   ContactRoute: typeof ContactRoute
   FreePlagiarismCheckerForStudentsRoute: typeof FreePlagiarismCheckerForStudentsRoute
@@ -217,8 +217,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
+    '/blog_': {
+      id: '/blog_'
       path: '/blog'
       fullPath: '/blog'
       preLoaderRoute: typeof BlogRouteImport
@@ -297,20 +297,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRouteWithChildren,
+  BlogRoute: BlogRoute,
   CheckerRoute: CheckerRoute,
   ContactRoute: ContactRoute,
   FreePlagiarismCheckerForStudentsRoute: FreePlagiarismCheckerForStudentsRoute,
