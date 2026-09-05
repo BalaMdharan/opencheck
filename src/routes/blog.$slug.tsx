@@ -20,9 +20,9 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.summary },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: url, tagName: "meta" },
+        { property: "og:url", content: url },
       ],
-      links: [{ rel: "canonical", href: url, key: "canonical" }],
+      links: [{ rel: "canonical", href: url }],
       scripts: [
         {
           type: "application/ld+json",

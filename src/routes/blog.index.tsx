@@ -17,15 +17,9 @@ export const Route = createFileRoute("/blog/")({
         content:
           "Guides on similarity reports and citation practice, plus development notes from the OpenCheck project.",
       },
-      { property: "og:url", content: "https://openchecknow.lovable.app/blog", tagName: "meta" },
+      { property: "og:url", content: "https://openchecknow.lovable.app/blog" },
     ],
-    links: [
-      {
-        rel: "canonical",
-        href: "https://openchecknow.lovable.app/blog",
-        key: "canonical",
-      },
-    ],
+    links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/blog" }],
   }),
   component: BlogPage,
 });
