@@ -818,6 +818,142 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "how-to-paraphrase-without-plagiarizing",
+    title: "How to paraphrase without plagiarizing",
+    category: "Guides",
+    summary:
+      "Paraphrasing is restating an idea in your own words and structure — and still citing it. Here is a method that produces genuine paraphrase instead of disguised copying.",
+    readingTime: "5 min read",
+    intro:
+      "Most accidental plagiarism is failed paraphrase. The writer swaps a few synonyms, keeps the original sentence structure, and assumes the rewording made it theirs. It did not. A paraphrase is only legitimate when both the wording and the structure are yours — and even then, the idea still needs a citation.",
+    sections: [
+      {
+        heading: "The read-cover-write method",
+        paragraphs: [
+          "Read the passage until you understand it, then close it or cover it. Write what it said from memory, as if explaining it to a classmate. Only then reopen the source to check you got the facts right.",
+          "This works because it forces your brain to retrieve the idea, not the sentence. What you produce will naturally differ in structure, and anything you cannot reproduce from memory is a sign you did not understand it yet — which is a reading problem, not a writing one.",
+        ],
+      },
+      {
+        heading: "What a failed paraphrase looks like",
+        paragraphs: [
+          "If your version keeps the source's sentence order, its distinctive phrases, or its metaphors, it is patchwriting — and most integrity policies treat it as plagiarism even with a citation attached. The tell is simple: hold your version next to the original. If a reader can see which sentence came from which, you have not paraphrased.",
+        ],
+        bullets: [
+          "Synonym swapping: same skeleton, different adjectives. Not a paraphrase.",
+          "Sentence shuffling: same sentences, new order. Not a paraphrase.",
+          "True paraphrase: the idea restated in your own structure, plus a citation. This one is.",
+        ],
+      },
+      {
+        heading: "Citation is not optional",
+        paragraphs: [
+          "A paraphrase without a citation tells the reader the idea is yours. That is the actual offence — misrepresenting whose thinking it is — and it exists no matter how thoroughly you rewrote the sentence.",
+          "When you genuinely cannot say it better or shorter than the source, quote it instead. A short quotation with quotation marks and a citation is always safer than a strained paraphrase of a distinctive phrase.",
+        ],
+      },
+      {
+        heading: "Check yourself before you submit",
+        paragraphs: [
+          "Run your draft through a similarity check and look specifically at the passages you paraphrased. If the checker highlights them, your paraphrase stayed too close to the source's wording and needs another pass — or quotation marks.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "what-is-mosaic-plagiarism",
+    title: "Mosaic plagiarism: the copying that hides between sentences",
+    category: "Guides",
+    summary:
+      "Mosaic plagiarism weaves lifted phrases into your own sentences without quotation marks. Why it is treated as seriously as direct copying, and how to spot it in your own drafts.",
+    readingTime: "4 min read",
+    intro:
+      "Mosaic plagiarism — also called patchwriting — is the practice of stitching borrowed phrases into your own prose without quotation marks. No single sentence is copied whole, so it feels different from pasting a paragraph. Institutions treat it the same way, because the borrowed words are still there doing the work.",
+    sections: [
+      {
+        heading: "How it happens to honest writers",
+        paragraphs: [
+          "It usually starts with notes. You copy a striking phrase from a source into your notes without quotation marks, and two weeks later it is in your draft and you no longer remember it was not yours. This is why the standard advice is mechanical: everything pasted into notes gets quotation marks at the moment you paste it.",
+        ],
+      },
+      {
+        heading: "What it looks like",
+        paragraphs: [
+          "A mosaic passage keeps the source's distinctive vocabulary — the unusual verb, the coined phrase, the specific three-part list — while changing the connective tissue around it. Running text searches miss it; reading side by side does not.",
+          "A practical test: underline every phrase in your paragraph that sounds smarter than your usual writing. Each one should either be a quotation, a paraphrase you could defend, or a technical term of the field.",
+        ],
+      },
+      {
+        heading: "Fixing it",
+        paragraphs: [
+          "For each borrowed phrase you find, choose one of three honest options: put it in quotation marks with a citation, rewrite the whole sentence from the idea up, or delete it. Deleting is underrated — mosaic phrases often persist because they sounded good, not because they carried an argument.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "group-project-plagiarism-responsibility",
+    title: "Group projects and plagiarism: who is responsible?",
+    category: "Guides",
+    summary:
+      "Most institutions hold every name on a group submission responsible for everything in it. How to protect yourself before, during, and after a group project.",
+    readingTime: "4 min read",
+    intro:
+      "When a group submits one document, most academic integrity policies treat every listed author as responsible for all of it — including the paragraph one member pasted from a website at midnight. 'I did not write that section' is rarely a complete defence.",
+    sections: [
+      {
+        heading: "Agree on sourcing rules before anyone writes",
+        paragraphs: [
+          "Spend ten minutes at the first meeting on citation style, whether paraphrase is acceptable for key claims, and a shared folder where every source is saved as a link or PDF. Groups that skip this step discover their rules differ at the worst possible time.",
+        ],
+      },
+      {
+        heading: "Keep drafts and messages",
+        paragraphs: [
+          "Use a shared document with version history rather than files passed around by email. If an integrity question is ever raised, the history shows who contributed what — which protects the members who did the work honestly.",
+        ],
+      },
+      {
+        heading: "Check the whole document, not just your part",
+        paragraphs: [
+          "Before submission, one person should read the final document end to end for tone shifts and run it through a similarity checker. A sudden change in vocabulary or formatting inside a section is worth a polite question to whoever wrote it.",
+          "This is not mistrust; it is the same proofreading pass you would do for spelling. The five minutes it takes is cheaper than an academic misconduct meeting.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "plagiarism-check-word-limits",
+    title: "Why plagiarism checkers have word limits — and how to check long documents",
+    category: "Explainers",
+    summary:
+      "Word caps exist because comparison costs scale with length. What the limits mean for theses and dissertations, and how to check a long document in full.",
+    readingTime: "4 min read",
+    intro:
+      "Almost every free plagiarism checker caps you at a few hundred to a few thousand words, and the full check sits behind a subscription. The limit is not arbitrary, but it is also not a law of nature — it is a business decision about who pays for the computing time.",
+    sections: [
+      {
+        heading: "Why limits exist",
+        paragraphs: [
+          "Every word you submit must be split, fingerprinted, and compared against an index. Longer documents mean more comparisons and more bandwidth retrieving candidate sources. For a service paying per search query, a 20,000-word thesis costs real money to check.",
+        ],
+      },
+      {
+        heading: "What the cap means in practice",
+        paragraphs: [
+          "A 500-word preview is not a sample of the whole document — it is just the first 500 words. If the borrowed passage is on page twelve, a capped check will never see it. Treat preview results as evidence about the checked portion only.",
+        ],
+      },
+      {
+        heading: "Checking a long document for free",
+        paragraphs: [
+          "OpenCheck accepts documents up to 5,000 words in one pass, which covers most essays whole. For a thesis, split by chapter and check each part — chapter boundaries are natural seams, and a chapter-level report is easier to act on than a single score for 60 pages.",
+          "Whichever tool you use, check the references and appendices separately or exclude them: they inflate similarity without telling you anything about the body text.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string) {
