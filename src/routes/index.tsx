@@ -6,11 +6,11 @@ import { DisclaimerNote } from "@/components/site/DisclaimerNote";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "OpenCheck — Free plagiarism & similarity checker for students" },
+      { title: "Free Similarity Checker — Check Plagiarism Instantly, No Sign-Up | OpenCheck" },
       {
         name: "description",
         content:
-          "Paste an essay, chapter, or article and see which sentences overlap with existing sources, next to the sources themselves — free, no account, nothing archived.",
+          "Check similarity for free: paste your essay or article and instantly see your similarity score and matching sources. No account, nothing stored, 100% free.",
       },
       {
         property: "og:title",

@@ -28,13 +28,13 @@ const FAQS = [
 export const Route = createFileRoute("/checker")({
   head: () => ({
     meta: [
-      { title: "Free Plagiarism Checker — No Sign-Up, Nothing Stored | OpenCheck" },
+      { title: "Free Similarity & Plagiarism Checker — Instant, No Sign-Up | OpenCheck" },
       {
         name: "description",
         content:
-          "Free plagiarism checker for students and writers. Paste your text, see which sentences match existing sources, and fix citations. No account, no cost, nothing stored.",
+          "Check similarity for free in seconds. Paste your essay or article, see your similarity percentage and matching sources instantly. No account, nothing stored.",
       },
-      { property: "og:title", content: "Free Plagiarism Checker — No Sign-Up, Nothing Stored" },
+      { property: "og:title", content: "Free Similarity & Plagiarism Checker — Instant, No Sign-Up" },
       {
         property: "og:description",
         content:
@@ -72,6 +72,7 @@ function CheckerPage() {
       />
       <div className="container-page py-10">
         <CheckerWorkspace />
+        <AdBanner />
       </div>
 
       <section className="border-t border-border bg-surface" aria-labelledby="faq-heading">

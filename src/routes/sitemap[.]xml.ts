@@ -32,6 +32,11 @@ export const Route = createFileRoute("/sitemap.xml")({
             changefreq: "monthly",
             priority: "0.8",
           },
+          {
+            path: "/plagiarism-checker-for-teachers",
+            changefreq: "monthly",
+            priority: "0.8",
+          },
           { path: "/how-it-works", changefreq: "monthly", priority: "0.8" },
           { path: "/about", changefreq: "monthly", priority: "0.6" },
           { path: "/blog", changefreq: "weekly", priority: "0.7" },

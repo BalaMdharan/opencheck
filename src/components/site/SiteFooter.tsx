@@ -1,11 +1,20 @@
 import { Link } from "@tanstack/react-router";
 import { ShieldCheck } from "lucide-react";
 import { LEGAL_LINKS, NAV_LINKS } from "@/lib/site";
+import { AdBanner } from "@/components/ads/AdSlot";
+
+const AUDIENCE_LINKS = [
+  { to: "/free-plagiarism-checker-for-students", label: "Students" },
+  { to: "/plagiarism-checker-for-teachers", label: "Teachers" },
+  { to: "/plagiarism-checker-for-researchers", label: "Researchers" },
+  { to: "/plagiarism-checker-for-bloggers", label: "Bloggers" },
+] as const;
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-surface">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-3">
+      <AdBanner className="container-page" />
+      <div className="container-page grid gap-10 py-12 md:grid-cols-4">
         <div className="max-w-sm">
           <div className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-md bg-primary text-primary-foreground">
@@ -23,6 +32,22 @@ export function SiteFooter() {
           <h2 className="text-sm font-semibold">Site</h2>
           <ul className="mt-3 space-y-2">
             {NAV_LINKS.map((link) => (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  className="text-sm text-muted-foreground hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Checker for">
+          <h2 className="text-sm font-semibold">Checker for</h2>
+          <ul className="mt-3 space-y-2">
+            {AUDIENCE_LINKS.map((link) => (
               <li key={link.to}>
                 <Link
                   to={link.to}
