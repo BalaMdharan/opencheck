@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { AdBanner } from "@/components/ads/AdSlot";
 import { PageHeader } from "@/components/site/PageHeader";
 import { CheckerWorkspace } from "@/components/checker/CheckerWorkspace";
 
