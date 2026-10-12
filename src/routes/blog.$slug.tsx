@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/PageHeader";
-import { getPostBySlug } from "@/lib/blog";
+import { BLOG_POSTS, getPostBySlug } from "@/lib/blog";
+import { AdSlot } from "@/components/ads/AdSlot";
 import { breadcrumbLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
@@ -53,6 +54,9 @@ export const Route = createFileRoute("/blog/$slug")({
 
 function BlogPostPage() {
   const { post } = Route.useLoaderData();
+  const related = BLOG_POSTS.filter((p) => p.slug !== post.slug)
+    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .slice(0, 3);
 
   return (
     <>
@@ -60,7 +64,7 @@ function BlogPostPage() {
       <article className="container-page prose-page max-w-3xl py-14">
         <p className="text-sm text-muted-foreground">{post.readingTime}</p>
         <p className="lead">{post.intro}</p>
-        {post.sections.map((section) => (
+        {post.sections.map((section, i) => (
           <section key={section.heading}>
             <h2>{section.heading}</h2>
             {section.paragraphs.map((paragraph) => (
@@ -73,6 +77,7 @@ function BlogPostPage() {
                 ))}
               </ul>
             ) : null}
+            {i === 1 ? <AdSlot size="300x250" /> : null}
           </section>
         ))}
         <aside className="rounded-lg border bg-muted/40 p-6 not-prose">
@@ -93,6 +98,24 @@ function BlogPostPage() {
             </Link>
           </div>
         </aside>
+        <AdSlot size="300x250" />
+        <nav aria-label="Related articles" className="not-prose mt-10">
+          <h2 className="text-xl font-semibold text-foreground">Related reading</h2>
+          <ul className="mt-4 grid gap-4 sm:grid-cols-3">
+            {related.map((p) => (
+              <li key={p.slug} className="rounded-lg border border-border bg-card p-4">
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: p.slug }}
+                  className="text-sm font-semibold text-foreground hover:text-primary"
+                >
+                  {p.title}
+                </Link>
+                <p className="mt-1 text-xs text-muted-foreground">{p.readingTime}</p>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <p>
           <Link to="/blog">← Back to all articles</Link>
         </p>
