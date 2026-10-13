@@ -61,7 +61,8 @@ function BlogPostPage() {
   return (
     <>
       <PageHeader eyebrow={post.category} title={post.title} description={post.summary} />
-      <article className="container-page prose-page max-w-3xl py-14">
+      <div className="container-page flex justify-center gap-8">
+      <article className="prose-page max-w-3xl py-14">
         <p className="text-sm text-muted-foreground">{post.readingTime}</p>
         <p className="lead">{post.intro}</p>
         {post.sections.map((section, i) => (
@@ -120,6 +121,10 @@ function BlogPostPage() {
           <Link to="/blog">← Back to all articles</Link>
         </p>
       </article>
+      <aside aria-label="Advertisement" className="hidden shrink-0 pt-14 2xl:block">
+        <AdSlot size="160x600" className="sticky top-8 my-0" />
+      </aside>
+      </div>
     </>
   );
 }
