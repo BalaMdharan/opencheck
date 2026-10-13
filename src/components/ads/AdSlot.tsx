@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 export type AdSize = "300x250" | "728x90" | "320x50" | "160x600";
 
 export const AD_CODES: Record<AdSize, string> = {
-  "300x250": "",
-  "728x90": "",
-  "320x50": "",
-  "160x600": "",
+  "300x250": '<script src="https://www.highrevenueformat.com/286215266d13a23084cfd5c0543bf49d/invoke.js"></script>',
+  "728x90": '<script src="https://www.highrevenueformat.com/1763e7ceae9503beafdfc5b5cae90810/invoke.js"></script>',
+  "320x50": '<script src="https://www.highrevenueformat.com/f2438b5215ac7417b73dffeeff6daaf2/invoke.js"></script>',
+  "160x600": '<script src="https://www.highrevenueformat.com/54c55d0e77c2c3d8080bfbd212763090/invoke.js"></script>',
 };
 
 const DIMENSIONS: Record<AdSize, { w: number; h: number }> = {
