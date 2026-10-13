@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -22,39 +22,31 @@ const DIMENSIONS: Record<AdSize, { w: number; h: number }> = {
 };
 
 function AdUnit({ size, className }: { size: AdSize; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const code = AD_CODES[size];
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || !code) return;
-    el.innerHTML = "";
-    const tpl = document.createElement("div");
-    tpl.innerHTML = code;
-    // Re-create scripts so the browser executes them.
-    Array.from(tpl.childNodes).forEach((node) => {
-      if (node instanceof HTMLScriptElement) {
-        const s = document.createElement("script");
-        Array.from(node.attributes).forEach((a) => s.setAttribute(a.name, a.value));
-        s.text = node.text;
-        el.appendChild(s);
-      } else {
-        el.appendChild(node.cloneNode(true));
-      }
-    });
-    return () => {
-      el.innerHTML = "";
-    };
-  }, [code]);
-
   if (!code) return null;
+  const key = code.match(/com\/([a-f0-9]+)\//)?.[1];
+  if (!key) return null;
   const { w, h } = DIMENSIONS[size];
+  const doc = `<!DOCTYPE html><html><head><style>html,body{margin:0;padding:0;overflow:hidden;}</style></head><body><script type="text/javascript">atOptions={'key':'${key}','format':'iframe','height':${h},'width':${w},'params':{}};</script><script type="text/javascript" src="https://www.highrevenueformat.com/${key}/invoke.js"></script></body></html>`;
   return (
     <div className={cn("flex flex-col items-center", className)}>
       <span className="mb-1 text-[10px] uppercase tracking-wider text-muted-foreground">
         Advertisement
       </span>
-      <div ref={ref} style={{ width: w, minHeight: h }} className="overflow-hidden" />
+      <div style={{ width: w, height: h }} className="overflow-hidden">
+        {mounted && (
+          <iframe
+            title="Advertisement"
+            srcDoc={doc}
+            width={w}
+            height={h}
+            scrolling="no"
+            style={{ border: 0, display: "block" }}
+          />
+        )}
+      </div>
     </div>
   );
 }
