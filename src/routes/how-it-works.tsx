@@ -18,6 +18,8 @@ export const Route = createFileRoute("/how-it-works")({
         content:
           "From pasted text to reviewed matches: the steps behind an OpenCheck similarity report, and its limits.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: "https://openchecknow.lovable.app/how-it-works" },
     ],
     links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/how-it-works" }],

@@ -42,6 +42,7 @@ export const Route = createFileRoute("/plagiarism-checker-for-bloggers")({
           "Screen posts and client drafts for duplicate content before publishing. Free and nothing is stored.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: URL },
     ],
     links: [{ rel: "canonical", href: URL }],

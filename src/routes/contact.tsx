@@ -18,6 +18,8 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Questions, feedback, accessibility issues, or privacy requests — reach the team.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: "https://openchecknow.lovable.app/contact" },
     ],
     links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/contact" }],
