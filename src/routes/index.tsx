@@ -6,21 +6,23 @@ import { DisclaimerNote } from "@/components/site/DisclaimerNote";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Free Similarity Checker — Check Plagiarism Instantly, No Sign-Up | OpenCheck" },
+      { title: "Free Similarity Checker — No Sign-Up | OpenCheck" },
       {
         name: "description",
         content:
-          "Check similarity for free: paste your essay or article and instantly see your similarity score and matching sources. No account, nothing stored, 100% free.",
+          "Check text for similarity free—no sign-up required. Paste an essay or article to review matching sentences and sources, and check citations before you submit.",
       },
       {
         property: "og:title",
-        content: "See where your writing overlaps with existing work",
+        content: "Free Similarity Checker — No Sign-Up | OpenCheck",
       },
       {
         property: "og:description",
         content:
-          "Review matching sentences beside their possible sources and fix your citations before anyone else reads your draft.",
+          "Check text for similarity free. Review matching sentences and sources, with no account required.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: "https://openchecknow.lovable.app/" },
     ],
     links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/" }],
