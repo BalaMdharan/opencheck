@@ -42,6 +42,7 @@ export const Route = createFileRoute("/plagiarism-checker-for-teachers")({
           "Check student work for uncited overlap without a licence or an account. Nothing is stored.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: URL },
     ],
     links: [{ rel: "canonical", href: URL }],

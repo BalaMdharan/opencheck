@@ -42,6 +42,7 @@ export const Route = createFileRoute("/plagiarism-checker-for-researchers")({
           "Check a manuscript for uncited overlap and self-plagiarism before you submit it. Nothing is archived.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: URL },
     ],
     links: [{ rel: "canonical", href: URL }],

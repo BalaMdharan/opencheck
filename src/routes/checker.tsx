@@ -42,6 +42,7 @@ export const Route = createFileRoute("/checker")({
           "Check your essay or article for similarity against public sources. Free, private, no account needed.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: "https://openchecknow.lovable.app/checker" },
     ],
     links: [{ rel: "canonical", href: "https://openchecknow.lovable.app/checker" }],

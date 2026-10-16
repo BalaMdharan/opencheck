@@ -43,6 +43,7 @@ export const Route = createFileRoute("/free-plagiarism-checker-for-students")({
           "Check an essay or assignment for similarity before you submit it. Free, private, and nothing is archived.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:url", content: URL },
     ],
     links: [{ rel: "canonical", href: URL }],
